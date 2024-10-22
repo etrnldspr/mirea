@@ -1,11 +1,11 @@
-function kkk!(robot):Nothing
-    while !isborder(robot, Ost)
+function kkk!(robot, s1, s2):Nothing
+    while !isborder(robot, s1)
         putmarker!(robot)
-        move!(robot, Ost)
+        move!(robot, s1)
     end
 #направо и закрашивает
-    while !isborder(robot, West)
-        move!(robot, West)
+    while !isborder(robot, s2)
+        move!(robot, s2)
     end
 #возвращается
 end
@@ -14,7 +14,7 @@ end
 function res!(robot):Nothing   #результирующая функция
     while !isborder(robot, Nord)
         putmarker!(robot)
-        kkk!(robot)
+        kkk!(robot, Ost, West)
         move!(robot, Nord)
     end
     while !isborder(robot, Sud)
