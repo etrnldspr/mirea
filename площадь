@@ -1,0 +1,23 @@
+function kkk!(robot):Nothing
+    while !isborder(robot, Ost)
+        putmarker!(robot)
+        move!(robot, Ost)
+    end
+#направо и закрашивает
+    while !isborder(robot, West)
+        move!(robot, West)
+    end
+#возвращается
+end
+
+
+function res!(robot):Nothing   #результирующая функция
+    while !isborder(robot, Nord)
+        putmarker!(robot)
+        kkk!(robot)
+        move!(robot, Nord)
+    end
+    while !isborder(robot, Sud)
+        move!(robot, Sud)
+    end
+end
